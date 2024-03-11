@@ -30,7 +30,8 @@ body {
 	cursor: pointer;
 	will-change: transform, filter;
 	filter: grayscale() brightness(.5);
-	transition: transform 1.25s var(--transition);
+	transition: transform 1.25s var(--transition), filter 3s var(--transition);
+	will-change: transform, filter;
 }
 .items .item:hover {
     filter: inherit;
@@ -51,22 +52,22 @@ body {
 
 .items .item:hover + * {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 8.5));
+	transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
 	z-index: -1;
 }
 .items .item:hover + * + * {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 6.5));
+	transform: translateZ(calc(var(--index) * 6.5)) rotateY(40deg);
 	z-index: -2;
 }
 .items .item:hover + * + * + * {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 4.5));
+	transform: translateZ(calc(var(--index) * 4.5)) rotateY(30deg);;
 	z-index: -3;
 }
 .items .item:hover + * + * + * + * {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 2.5));
+	transform: translateZ(calc(var(--index) * 2.5)) rotateY(20deg);;
 	z-index: -4;
 }
 
@@ -75,18 +76,17 @@ body {
 
 .items .item:has( + :hover) {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 8.5));
+	transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
 }
 .items .item:has( + * + :hover) {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 6.5));
+	transform: translateZ(calc(var(--index) * 6.5)) rotateY(-40deg);
 }
 .items .item:has( + * + * + :hover) {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 4.5));
+	transform: translateZ(calc(var(--index) * 4.5)) rotateY(-30deg);
 }
 .items .item:has( + * + * + * + :hover) {
 	filter: inherit;
-	transform: translateZ(calc(var(--index) * 2.5));
+	transform: translateZ(calc(var(--index) * 2.5)) rotateY(-20deg);
 }
-
